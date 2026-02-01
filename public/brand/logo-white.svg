@@ -1,0 +1,12 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logomark - Abstract A with energy bolt (white background) -->
+  <rect x="0" y="0" width="40" height="40" rx="10" fill="white"/>
+  
+  <!-- Abstract A / Energy bolt shape -->
+  <path d="M20 8L12 22H17L14 32L28 18H22L26 8H20Z" fill="#1D4ED8"/>
+  
+  <!-- Wordmark: AMPRA -->
+  <text x="52" y="28" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="24" font-weight="700" fill="white">
+    <tspan>ampra</tspan>
+  </text>
+</svg>

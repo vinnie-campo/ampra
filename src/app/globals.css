@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Ampra Brand Colors as CSS Variables */
+    --ampra-500: #2563EB;
+    --ampra-600: #1D4ED8;
+    --volt-400: #4ADE80;
+    --volt-500: #22C55E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-slate-800 antialiased;
+    background-color: #F8FAFC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-slate-900;
+  }
+  
+  /* Selection color */
+  ::selection {
+    background-color: rgba(37, 99, 235, 0.2);
+  }
+}
+
+@layer components {
+  /* Primary Button - Ampra Blue */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full;
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.35);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-300 border-2 rounded-full;
+    @apply text-ampra-600 border-ampra-200 hover:bg-ampra-50 hover:border-ampra-300;
+  }
+
+  /* Accent/Volt Button */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full;
+    background: linear-gradient(135deg, #4ADE80 0%, #22C55E 100%);
+    box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.25);
+  }
+  
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px 0 rgba(34, 197, 94, 0.35);
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200;
+    @apply text-slate-600 hover:bg-slate-100 rounded-full;
+  }
+
+  /* Cards */
+  .card {
+    @apply p-6 transition-all duration-300 bg-white border rounded-2xl border-slate-200;
+  }
+  
+  .card:hover {
+    @apply shadow-lg;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-elevated {
+    @apply p-8 bg-white rounded-3xl;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Form Inputs */
+  .input-field {
+    @apply w-full px-4 py-3 text-sm transition-all duration-200 border rounded-xl border-slate-300 bg-white;
+    @apply focus:outline-none focus:ring-2 focus:ring-ampra-500 focus:border-transparent;
+    @apply placeholder:text-slate-400;
+  }
+
+  .input-label {
+    @apply block mb-2 text-sm font-medium text-slate-700;
+  }
+
+  /* Section headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-slate-500 max-w-2xl;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #2563EB 0%, #4ADE80 100%);
+  }
+  
+  /* Ampra gradient background */
+  .bg-ampra-gradient {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 50%, #1E40AF 100%);
+  }
+
+  /* Progress tracker styles */
+  .progress-step-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold transition-all duration-500;
+  }
+
+  /* Battery visualization */
+  .battery-visual {
+    @apply relative w-full aspect-[3/4] rounded-2xl overflow-hidden;
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  }
+
+  .battery-level {
+    @apply absolute bottom-0 left-0 right-0 transition-all duration-1000 ease-out;
+    background: linear-gradient(180deg, #4ADE80 0%, #22C55E 100%);
+  }
+  
+  /* Energy flow animation */
+  .energy-flow {
+    background: linear-gradient(90deg, transparent 0%, #4ADE80 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: energyFlow 2s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400;
+}
+
+/* Animation delays for staggered reveals */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-ampra-500 ring-offset-2;
+}

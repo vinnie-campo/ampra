@@ -1,0 +1,20 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logomark - Abstract A with energy bolt -->
+  <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#logoGradient)"/>
+  
+  <!-- Abstract A / Energy bolt shape -->
+  <path d="M20 8L12 22H17L14 32L28 18H22L26 8H20Z" fill="white"/>
+  
+  <!-- Wordmark: AMPRA -->
+  <text x="52" y="28" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="24" font-weight="700" fill="#1E293B">
+    <tspan>ampra</tspan>
+  </text>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+</svg>
